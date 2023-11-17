@@ -68,6 +68,12 @@ int main(int argc, char** argv) {
 
         /* Increment current line number */
         line_number++;
+
+        /* Free state.args memory */
+        int i;
+        for (i = 0; i < state.arg_count; i++) {
+            free(state.args[i]);
+        }
     }
 
     return 0;
