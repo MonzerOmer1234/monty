@@ -40,8 +40,8 @@ void exec(stack_t** stack, unsigned int line_number) {
         }
     }
 
-    state.status = EXIT_FAILURE;
     fprintf(stderr, "L%d: unknown instruction %s\n", line_number, state.args[0]);
+    state.status = EXIT_FAILURE;
 }
 
 /**
