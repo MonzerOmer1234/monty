@@ -96,6 +96,17 @@ void exec_swap(stack_t** stack, unsigned int line_number);
 void exec_add(stack_t** stack, unsigned int line_number);
 
 /**
+ * exec_nop - executes the nop instruction
+ * 
+ * @stack: pointer to the stack
+ * @line_number: the line number of the instruction
+ * 
+*/
+void exec_nop(stack_t** stack, unsigned int line_number) {
+    state.status = EXIT_SUCCESS;
+}
+
+/**
  * exec_sub - executes the sub instruction
  * 
  * @stack: pointer to the stack
