@@ -100,6 +100,7 @@ void pop_bottom(stack_t** stack) {
  * 
 */
 void exec_push(stack_t** stack, unsigned int line_number) {
+    return;
     stack_t* new_stack_entry = malloc(sizeof(stack_t));
     int operand;
 
