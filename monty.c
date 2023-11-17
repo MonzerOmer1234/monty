@@ -70,7 +70,7 @@ int main(int argc, char** argv) {
         line_number++;
 
         /* Free state.args memory */
-        free_string_array(state.args);
+        /* free_string_array(state.args); */
     }
 
     return 0;
