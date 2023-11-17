@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include "string_utils.h"
 
@@ -59,7 +60,7 @@ char** split_string(char* str) {
     int i;
     char** result;
 
-    result = malloc((word_count + 1) * sizeof(char));
+    result = malloc((word_count + 1) * sizeof(char*));
     for (i = 0; i < length; i++) {
         if (str[i] == ' ') {
             if (word_start != -1) {
