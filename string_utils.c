@@ -102,6 +102,7 @@ void free_string_array(char** string_array) {
  * Return - true if @str is convertible to integer, false otherwise
 */
 bool is_valid_integer(char* str) {
+    if (*str && *str == '-') str++;
     while (*str) {
         if (*str < '0' || *str > '9') {
             return false;
