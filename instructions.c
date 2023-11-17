@@ -384,7 +384,7 @@ void exec_pchar(stack_t** stack, unsigned int line_number) {
 
     if (!(*stack)) {
         state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+        fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
         return;
     }
 
