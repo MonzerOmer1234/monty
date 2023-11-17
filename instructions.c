@@ -150,7 +150,7 @@ void exec_push(stack_t** stack, unsigned int line_number) {
 void exec_pall(stack_t** stack, unsigned int line_number __attribute__((unused))) {
     stack_t* current = *stack;
     while (current) {
-        printf("%d\n", current->n);
+        /*printf("%d\n", current->n);*/
         current = current->prev;
     }
 }
