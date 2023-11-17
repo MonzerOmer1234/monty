@@ -70,10 +70,10 @@ int main(int argc, char** argv) {
         line_number++;
 
         /* Free state.args memory */
-        int i;
+        /*int i;
         for (i = 0; i < state.arg_count; i++) {
             free(state.args[i]);
-        }
+        }*/
         free(state.args);
     }
 
