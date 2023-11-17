@@ -15,6 +15,8 @@ void remove_comments(char* str) {
         if (str[i] == '#') {
             str[i] = '\0';
             break;
+        } else if (str[i] != ' ') {
+            break;
         }
     }
 }
