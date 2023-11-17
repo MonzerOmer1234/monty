@@ -73,5 +73,8 @@ int main(int argc, char** argv) {
         /* free_string_array(state.args); */
     }
 
+    /* Close input file */
+    fclose(input_file);
+
     return 0;
 }
