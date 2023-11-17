@@ -250,7 +250,7 @@ void exec_add(stack_t** stack, unsigned int line_number) {
  * @line_number: the line number of the instruction
  * 
 */
-void exec_nop(stack_t** stack, unsigned int line_number) {
+void exec_nop(stack_t** stack __attribute__((unused)), unsigned int line_number __attribute__((unused))) {
     state.status = EXIT_SUCCESS;
 }
 
