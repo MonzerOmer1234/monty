@@ -241,7 +241,7 @@ void free_stack(stack_t **stack);
  *
  * @str: the input string
  *
- * Return - the number of words in the string
+ * Return: the number of words in the string
  */
 int get_word_count(char *str);
 
@@ -250,7 +250,7 @@ int get_word_count(char *str);
  *
  * @str: the string to split
  *
- * Return - pointer to an array containing the split string
+ * Return: pointer to an array containing the split string
  */
 char **split_string(char *str);
 
@@ -261,7 +261,7 @@ char **split_string(char *str);
  * @from: the starting index of the substring
  * @to: the last index of the substring
  *
- * Return - a newly allocated string str[from, to]
+ * Return: a newly allocated string str[from, to]
  */
 char *substring(char *src, int from, int to);
 
@@ -278,7 +278,7 @@ void free_string_array(char **string_array);
  *
  * @str: the input string
  *
- * Return - true if @str is convertible to integer, false otherwise
+ * Return: true if @str is convertible to integer, false otherwise
  */
 bool is_valid_integer(char *str);
 
@@ -297,7 +297,7 @@ void remove_comments(char *str);
  *
  * @ch: the input character's ASCII code
  *
- * Return - true if @ch is a printable ASCII character, false
+ * Return: true if @ch is a printable ASCII character, false
  *          otherwise
  */
 bool is_printable_ascii_char(int ch);

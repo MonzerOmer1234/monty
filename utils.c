@@ -33,7 +33,7 @@ void remove_comments(char *str)
  *
  * @ch: the input character's ASCII code
  *
- * Return - true if @ch is a printable ASCII character, false
+ * Return: true if @ch is a printable ASCII character, false
  *          otherwise
  */
 bool is_printable_ascii_char(int ch)

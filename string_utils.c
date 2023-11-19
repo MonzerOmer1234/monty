@@ -6,11 +6,11 @@
 /**
  * substring - extracts a substring from the given string
  *
- * @str: the original string
+ * @src: the original string
  * @from: the starting index of the substring
  * @to: the last index of the substring
  *
- * Return - a newly allocated string str[from, to]
+ * Return: a newly allocated string str[from, to]
  */
 char *substring(char *src, int from, int to)
 {
@@ -32,7 +32,7 @@ char *substring(char *src, int from, int to)
  *
  * @str: the input string
  *
- * Return - the number of words in the string
+ * Return: the number of words in the string
  */
 int get_word_count(char *str)
 {
@@ -57,7 +57,7 @@ int get_word_count(char *str)
  *
  * @str: the string to split
  *
- * Return - pointer to an array containing the split string
+ * Return: pointer to an array containing the split string
  */
 char **split_string(char *str)
 {
@@ -118,7 +118,7 @@ void free_string_array(char **string_array)
  *
  * @str: the input string
  *
- * Return - true if @str is convertible to integer, false otherwise
+ * Return: true if @str is convertible to integer, false otherwise
  */
 bool is_valid_integer(char *str)
 {
