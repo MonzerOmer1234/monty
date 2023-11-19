@@ -482,3 +482,15 @@ void exec_stack(stack_t** stack __attribute__((unused)), unsigned int line_numbe
 void exec_queue(stack_t** stack __attribute__((unused)), unsigned int line_number __attribute__((unused))) {
     state.mode = QUEUE_MODE;
 }
+
+/**
+ * free_stack - removes all elements from the stack
+ * 
+ * @stack: pointer to the stack
+ * 
+*/
+void free_stack(stack_t** stack) {
+    while (state.stack_size > 0) {
+        pop_top(stack);
+    }
+}

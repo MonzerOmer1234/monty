@@ -194,4 +194,12 @@ void exec_stack(stack_t** stack, unsigned int line_number);
 */
 void exec_queue(stack_t** stack, unsigned int line_number);
 
+/**
+ * free_stack - removes all elements from the stack
+ * 
+ * @stack: pointer to the stack
+ * 
+*/
+void free_stack(stack_t** stack);
+
 #endif
