@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "monty.h"
 
+state_t state;
+
 /**
  * main - run the interpreter
  * @argc: number of arguments
@@ -11,8 +13,6 @@
  */
 int main(int argc, char **argv)
 {
-	state_t state;
-
 	FILE *input_file;		   /* The source file */
 	char buffer[1024];		   /* The buffer into which the source file will
 								* be read
