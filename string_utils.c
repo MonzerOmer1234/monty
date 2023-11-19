@@ -21,7 +21,7 @@ char *substring(char *src, int from, int to)
 		result[i - from] = src[i];
 	}
 	result[to - from + 1] = '\0';
-	return result;
+	return (result);
 }
 
 /**
@@ -40,14 +40,14 @@ int get_word_count(char *str)
 	int i;
 	if (length == 0)
 	{
-		return 0;
+		return (0);
 	}
 	word_count = (str[0] != ' ');
 	for (i = 1; i < length; i++)
 	{
 		word_count += (str[i - 1] == ' ' && str[i] != ' ');
 	}
-	return word_count;
+	return (word_count);
 }
 
 /**
@@ -90,7 +90,7 @@ char **split_string(char *str)
 		result[res_idx++] = substring(str, word_start, i - 1);
 	}
 	result[res_idx] = NULL;
-	return result;
+	return (result);
 }
 
 /**
@@ -124,8 +124,8 @@ bool is_valid_integer(char *str)
 	while (*str)
 	{
 		if (*str < '0' || *str > '9')
-			return false;
+			return (false);
 		str++;
 	}
-	return true;
+	return (true);
 }

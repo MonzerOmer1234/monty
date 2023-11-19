@@ -80,5 +80,5 @@ int main(int argc, char **argv)
 	/* Close input file */
 	fclose(input_file);
 
-	return 0;
+	return (0);
 }
