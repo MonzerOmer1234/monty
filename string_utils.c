@@ -87,9 +87,9 @@ char** split_string(char* str) {
  * @string_array: the string array to deallocate
 */
 void free_string_array(char** string_array) {
-    char* start = *string_array;
-    while (start) {
-        free(start);
+    char** start = string_array;
+    while(*start) {
+        free(*start);
         start++;
     }
     free(string_array);
