@@ -11,13 +11,13 @@
  */
 void exec_pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-    stack_t *stack_top = *stack;
-    while (stack_top && stack_top->n && is_printable_ascii_char(stack_top->n))
-    {
-        printf("%c", (char)stack_top->n);
-        stack_top = stack_top->prev;
-    }
-    printf("\n");
+	stack_t *stack_top = *stack;
+	while (stack_top && stack_top->n && is_printable_ascii_char(stack_top->n))
+	{
+		printf("%c", (char)stack_top->n);
+		stack_top = stack_top->prev;
+	}
+	printf("\n");
 }
 
 /**
@@ -29,20 +29,20 @@ void exec_pstr(stack_t **stack, unsigned int line_number __attribute__((unused))
  */
 void exec_rotl(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-    stack_t *second;
-    /* rotl has no effect if stack size is less than 2 */
-    if (state.stack_size > 1)
-    {
-        second = (*stack)->prev;
-        second->next = NULL;
+	stack_t *second;
+	/* rotl has no effect if stack size is less than 2 */
+	if (state.stack_size > 1)
+	{
+		second = (*stack)->prev;
+		second->next = NULL;
 
-        (*stack)->next = state.stack_bottom;
-        (*stack)->prev = NULL;
-        state.stack_bottom->prev = *stack;
-        state.stack_bottom = *stack;
+		(*stack)->next = state.stack_bottom;
+		(*stack)->prev = NULL;
+		state.stack_bottom->prev = *stack;
+		state.stack_bottom = *stack;
 
-        *stack = second;
-    }
+		*stack = second;
+	}
 }
 
 /**
@@ -54,20 +54,20 @@ void exec_rotl(stack_t **stack, unsigned int line_number __attribute__((unused))
  */
 void exec_rotr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-    stack_t *second_last;
-    /* rotr has no effect if stack size is less than 2 */
-    if (state.stack_size > 1)
-    {
-        second_last = state.stack_bottom->next;
-        second_last->prev = NULL;
+	stack_t *second_last;
+	/* rotr has no effect if stack size is less than 2 */
+	if (state.stack_size > 1)
+	{
+		second_last = state.stack_bottom->next;
+		second_last->prev = NULL;
 
-        (*stack)->next = state.stack_bottom;
-        state.stack_bottom->next = NULL;
-        state.stack_bottom->prev = *stack;
-        *stack = state.stack_bottom;
+		(*stack)->next = state.stack_bottom;
+		state.stack_bottom->next = NULL;
+		state.stack_bottom->prev = *stack;
+		*stack = state.stack_bottom;
 
-        state.stack_bottom = second_last;
-    }
+		state.stack_bottom = second_last;
+	}
 }
 
 /**
@@ -79,7 +79,7 @@ void exec_rotr(stack_t **stack, unsigned int line_number __attribute__((unused))
  */
 void exec_stack(stack_t **stack __attribute__((unused)), unsigned int line_number __attribute__((unused)))
 {
-    state.mode = STACK_MODE;
+	state.mode = STACK_MODE;
 }
 
 /**
@@ -91,5 +91,5 @@ void exec_stack(stack_t **stack __attribute__((unused)), unsigned int line_numbe
  */
 void exec_queue(stack_t **stack __attribute__((unused)), unsigned int line_number __attribute__((unused)))
 {
-    state.mode = QUEUE_MODE;
+	state.mode = QUEUE_MODE;
 }

@@ -10,20 +10,20 @@
  */
 void remove_comments(char *str)
 {
-    int str_length = strlen(str);
-    int i;
-    for (i = 0; i < str_length; i++)
-    {
-        if (str[i] == '#')
-        {
-            str[i] = '\0';
-            break;
-        }
-        else if (str[i] != ' ')
-        {
-            break;
-        }
-    }
+	int str_length = strlen(str);
+	int i;
+	for (i = 0; i < str_length; i++)
+	{
+		if (str[i] == '#')
+		{
+			str[i] = '\0';
+			break;
+		}
+		else if (str[i] != ' ')
+		{
+			break;
+		}
+	}
 }
 
 /**
@@ -37,5 +37,5 @@ void remove_comments(char *str)
  */
 bool is_printable_ascii_char(int ch)
 {
-    return (ch >= 32 && ch <= 127);
+	return (ch >= 32 && ch <= 127);
 }

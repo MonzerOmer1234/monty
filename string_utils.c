@@ -14,14 +14,14 @@
  */
 char *substring(char *src, int from, int to)
 {
-    char *result = malloc((to - from + 2) * sizeof(char));
-    int i;
-    for (i = from; i <= to; i++)
-    {
-        result[i - from] = src[i];
-    }
-    result[to - from + 1] = '\0';
-    return result;
+	char *result = malloc((to - from + 2) * sizeof(char));
+	int i;
+	for (i = from; i <= to; i++)
+	{
+		result[i - from] = src[i];
+	}
+	result[to - from + 1] = '\0';
+	return result;
 }
 
 /**
@@ -35,19 +35,19 @@ char *substring(char *src, int from, int to)
  */
 int get_word_count(char *str)
 {
-    int length = strlen(str);
-    int word_count;
-    int i;
-    if (length == 0)
-    {
-        return 0;
-    }
-    word_count = (str[0] != ' ');
-    for (i = 1; i < length; i++)
-    {
-        word_count += (str[i - 1] == ' ' && str[i] != ' ');
-    }
-    return word_count;
+	int length = strlen(str);
+	int word_count;
+	int i;
+	if (length == 0)
+	{
+		return 0;
+	}
+	word_count = (str[0] != ' ');
+	for (i = 1; i < length; i++)
+	{
+		word_count += (str[i - 1] == ' ' && str[i] != ' ');
+	}
+	return word_count;
 }
 
 /**
@@ -59,38 +59,38 @@ int get_word_count(char *str)
  */
 char **split_string(char *str)
 {
-    int length = strlen(str);
-    int word_start = -1;
-    int res_idx = 0;
-    int word_count = get_word_count(str);
-    int i;
-    char **result;
+	int length = strlen(str);
+	int word_start = -1;
+	int res_idx = 0;
+	int word_count = get_word_count(str);
+	int i;
+	char **result;
 
-    result = malloc((word_count + 1) * sizeof(char *));
-    for (i = 0; i < length; i++)
-    {
-        if (str[i] == ' ')
-        {
-            if (word_start != -1)
-            {
-                result[res_idx++] = substring(str, word_start, i - 1);
-                word_start = -1;
-            }
-        }
-        else
-        {
-            if (word_start == -1)
-            {
-                word_start = i;
-            }
-        }
-    }
-    if (word_start != -1)
-    {
-        result[res_idx++] = substring(str, word_start, i - 1);
-    }
-    result[res_idx] = NULL;
-    return result;
+	result = malloc((word_count + 1) * sizeof(char *));
+	for (i = 0; i < length; i++)
+	{
+		if (str[i] == ' ')
+		{
+			if (word_start != -1)
+			{
+				result[res_idx++] = substring(str, word_start, i - 1);
+				word_start = -1;
+			}
+		}
+		else
+		{
+			if (word_start == -1)
+			{
+				word_start = i;
+			}
+		}
+	}
+	if (word_start != -1)
+	{
+		result[res_idx++] = substring(str, word_start, i - 1);
+	}
+	result[res_idx] = NULL;
+	return result;
 }
 
 /**
@@ -101,13 +101,13 @@ char **split_string(char *str)
  */
 void free_string_array(char **string_array)
 {
-    char **start = string_array;
-    while (*start)
-    {
-        free(*start);
-        start++;
-    }
-    free(string_array);
+	char **start = string_array;
+	while (*start)
+	{
+		free(*start);
+		start++;
+	}
+	free(string_array);
 }
 
 /**
@@ -119,13 +119,13 @@ void free_string_array(char **string_array)
  */
 bool is_valid_integer(char *str)
 {
-    if (*str && *str == '-')
-        str++;
-    while (*str)
-    {
-        if (*str < '0' || *str > '9')
-            return false;
-        str++;
-    }
-    return true;
+	if (*str && *str == '-')
+		str++;
+	while (*str)
+	{
+		if (*str < '0' || *str > '9')
+			return false;
+		str++;
+	}
+	return true;
 }

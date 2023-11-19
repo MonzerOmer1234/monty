@@ -11,13 +11,13 @@
  */
 void exec_pint(stack_t **stack, unsigned int line_number)
 {
-    if (!(*stack))
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-        return;
-    }
-    printf("%d\n", (*stack)->n);
+	if (!(*stack))
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		return;
+	}
+	printf("%d\n", (*stack)->n);
 }
 
 /**
@@ -29,17 +29,17 @@ void exec_pint(stack_t **stack, unsigned int line_number)
  */
 void exec_pop(stack_t **stack, unsigned int line_number)
 {
-    if (!(*stack))
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-        return;
-    }
+	if (!(*stack))
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		return;
+	}
 
-    if (state.mode == STACK_MODE)
-        pop_top(stack);
-    else
-        pop_bottom(stack);
+	if (state.mode == STACK_MODE)
+		pop_top(stack);
+	else
+		pop_bottom(stack);
 }
 
 /**
@@ -51,22 +51,22 @@ void exec_pop(stack_t **stack, unsigned int line_number)
  */
 void exec_swap(stack_t **stack, unsigned int line_number)
 {
-    int *first;
-    int *second;
-    int temp;
+	int *first;
+	int *second;
+	int temp;
 
-    if (state.stack_size < 2)
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-        return;
-    }
+	if (state.stack_size < 2)
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		return;
+	}
 
-    first = &(*stack)->n;
-    second = &(*stack)->prev->n;
-    temp = *first;
-    *first = *second;
-    *second = temp;
+	first = &(*stack)->n;
+	second = &(*stack)->prev->n;
+	temp = *first;
+	*first = *second;
+	*second = temp;
 }
 
 /**
@@ -78,23 +78,23 @@ void exec_swap(stack_t **stack, unsigned int line_number)
  */
 void exec_add(stack_t **stack, unsigned int line_number)
 {
-    int *first;
-    int *second;
+	int *first;
+	int *second;
 
-    if (state.stack_size < 2)
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-        return;
-    }
+	if (state.stack_size < 2)
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		return;
+	}
 
-    /* Perform addition: second = second + first */
-    first = &(*stack)->n;
-    second = &(*stack)->prev->n;
-    *second = (*second + *first);
+	/* Perform addition: second = second + first */
+	first = &(*stack)->n;
+	second = &(*stack)->prev->n;
+	*second = (*second + *first);
 
-    /* Remove the top element */
-    pop_top(stack);
+	/* Remove the top element */
+	pop_top(stack);
 }
 
 /**
@@ -106,5 +106,5 @@ void exec_add(stack_t **stack, unsigned int line_number)
  */
 void exec_nop(stack_t **stack __attribute__((unused)), unsigned int line_number __attribute__((unused)))
 {
-    state.status = EXIT_SUCCESS;
+	state.status = EXIT_SUCCESS;
 }

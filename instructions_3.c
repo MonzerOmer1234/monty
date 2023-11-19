@@ -11,23 +11,23 @@
  */
 void exec_sub(stack_t **stack, unsigned int line_number)
 {
-    int *first;
-    int *second;
+	int *first;
+	int *second;
 
-    if (state.stack_size < 2)
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-        return;
-    }
+	if (state.stack_size < 2)
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		return;
+	}
 
-    /* Perform subtraction: second = second - first */
-    first = &(*stack)->n;
-    second = &(*stack)->prev->n;
-    *second = (*second - *first);
+	/* Perform subtraction: second = second - first */
+	first = &(*stack)->n;
+	second = &(*stack)->prev->n;
+	*second = (*second - *first);
 
-    /* Remove the top element */
-    pop_top(stack);
+	/* Remove the top element */
+	pop_top(stack);
 }
 
 /**
@@ -39,31 +39,31 @@ void exec_sub(stack_t **stack, unsigned int line_number)
  */
 void exec_div(stack_t **stack, unsigned int line_number)
 {
-    int *first;
-    int *second;
+	int *first;
+	int *second;
 
-    if (state.stack_size < 2)
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
-        return;
-    }
+	if (state.stack_size < 2)
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		return;
+	}
 
-    first = &(*stack)->n;
-    second = &(*stack)->prev->n;
+	first = &(*stack)->n;
+	second = &(*stack)->prev->n;
 
-    if (*first == 0)
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: division by zero\n", line_number);
-        return;
-    }
+	if (*first == 0)
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		return;
+	}
 
-    /* Perform division: second = second / first */
-    *second = (*second / *first);
+	/* Perform division: second = second / first */
+	*second = (*second / *first);
 
-    /* Remove the top element */
-    pop_top(stack);
+	/* Remove the top element */
+	pop_top(stack);
 }
 
 /**
@@ -75,23 +75,23 @@ void exec_div(stack_t **stack, unsigned int line_number)
  */
 void exec_mul(stack_t **stack, unsigned int line_number)
 {
-    int *first;
-    int *second;
+	int *first;
+	int *second;
 
-    if (state.stack_size < 2)
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
-        return;
-    }
+	if (state.stack_size < 2)
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		return;
+	}
 
-    /* Perform multiplication: second = second * first */
-    first = &(*stack)->n;
-    second = &(*stack)->prev->n;
-    *second = (*second * *first);
+	/* Perform multiplication: second = second * first */
+	first = &(*stack)->n;
+	second = &(*stack)->prev->n;
+	*second = (*second * *first);
 
-    /* Remove the top element */
-    pop_top(stack);
+	/* Remove the top element */
+	pop_top(stack);
 }
 
 /**
@@ -103,31 +103,31 @@ void exec_mul(stack_t **stack, unsigned int line_number)
  */
 void exec_mod(stack_t **stack, unsigned int line_number)
 {
-    int *first;
-    int *second;
+	int *first;
+	int *second;
 
-    if (state.stack_size < 2)
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
-        return;
-    }
+	if (state.stack_size < 2)
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+		return;
+	}
 
-    first = &(*stack)->n;
-    second = &(*stack)->prev->n;
+	first = &(*stack)->n;
+	second = &(*stack)->prev->n;
 
-    if (*first == 0)
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: division by zero\n", line_number);
-        return;
-    }
+	if (*first == 0)
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		return;
+	}
 
-    /* Perform modulus: second = second % first */
-    *second = (*second % *first);
+	/* Perform modulus: second = second % first */
+	*second = (*second % *first);
 
-    /* Remove the top element */
-    pop_top(stack);
+	/* Remove the top element */
+	pop_top(stack);
 }
 
 /**
@@ -139,23 +139,23 @@ void exec_mod(stack_t **stack, unsigned int line_number)
  */
 void exec_pchar(stack_t **stack, unsigned int line_number)
 {
-    int first;
+	int first;
 
-    if (!(*stack))
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
-        return;
-    }
+	if (!(*stack))
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+		return;
+	}
 
-    first = (*stack)->n;
+	first = (*stack)->n;
 
-    if (!is_printable_ascii_char(first))
-    {
-        state.status = EXIT_FAILURE;
-        fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
-        return;
-    }
+	if (!is_printable_ascii_char(first))
+	{
+		state.status = EXIT_FAILURE;
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+		return;
+	}
 
-    printf("%c\n", (char)first);
+	printf("%c\n", (char)first);
 }
