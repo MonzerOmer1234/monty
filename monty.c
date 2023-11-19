@@ -73,6 +73,9 @@ int main(int argc, char** argv) {
         free_string_array(state.args);
     }
 
+    /* Empty stack */
+    free_stack(&stack_ptr);
+
     /* Close input file */
     fclose(input_file);
 
