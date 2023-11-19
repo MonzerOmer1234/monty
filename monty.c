@@ -65,7 +65,7 @@ int main(int argc, char **argv)
 
 		/* Exit if an error occurred */
 		if (state.status == EXIT_FAILURE)
-			return EXIT_FAILURE;
+			return (EXIT_FAILURE);
 
 		/* Increment current line number */
 		line_number++;
