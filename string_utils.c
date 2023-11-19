@@ -16,6 +16,7 @@ char *substring(char *src, int from, int to)
 {
 	char *result = malloc((to - from + 2) * sizeof(char));
 	int i;
+
 	for (i = from; i <= to; i++)
 	{
 		result[i - from] = src[i];
@@ -38,6 +39,7 @@ int get_word_count(char *str)
 	int length = strlen(str);
 	int word_count;
 	int i;
+
 	if (length == 0)
 	{
 		return (0);
@@ -102,6 +104,7 @@ char **split_string(char *str)
 void free_string_array(char **string_array)
 {
 	char **start = string_array;
+	
 	while (*start)
 	{
 		free(*start);
