@@ -12,7 +12,7 @@ void remove_comments(char *str)
 {
 	int str_length = strlen(str);
 	int i;
-	
+
 	for (i = 0; i < str_length; i++)
 	{
 		if (str[i] == '#')

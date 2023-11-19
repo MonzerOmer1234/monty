@@ -79,6 +79,7 @@ void pop_bottom(stack_t **stack)
 {
 	/* Update the stack bottom pointer */
 	stack_t *current = state.stack_bottom;
+	
 	state.stack_bottom = state.stack_bottom->next;
 
 	/* Set the prev pointer of the stack bottom if stack is not empty */

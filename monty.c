@@ -8,7 +8,8 @@ int main(int argc, char **argv)
 {
 	FILE *input_file;		   /* The source file */
 	char buffer[1024];		   /* The buffer into which the source file will
-								*  be read */
+								* be read
+								*/
 	int line_number = 1;	   /* The current line number */
 	int line_length;		   /* The length of the current line */
 	stack_t *stack_ptr = NULL; /* Pointer to the stack */
