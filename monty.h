@@ -37,15 +37,25 @@ typedef struct instruction_s
 #define STACK_MODE 0
 #define QUEUE_MODE 1
 
+/**
+ * struct state_s - the state of the interpreter
+ * @stack_bottom: pointer to the bottom of the stack
+ * @stack_size: the size of the stack
+ * @args: the opcode and its arguments
+ * @arg_count: the number of arguments
+ * @mode: the operating mode (STACK_MODE or QUEUE_MODE)
+ * @status: The status code for the last executed instruction
+ * 
+ * Description: holds tha state of the interpreter
+ */
 typedef struct state_s
 {
-	stack_t *stack_bottom; /* Pointer to the bottom of the stack */
-	int stack_size;		   /* The size of the stack */
-	char **args;		   /* The opcode and its arguments */
-	int arg_count;		   /* The number of arguments */
-	int mode;			   /* The operating mode - 0: stack, 1: queue */
-	int status;			   /* The status code for the last instruction -
-							* 0: sucess, -1: failure */
+	stack_t *stack_bottom;
+	int stack_size;
+	char **args;
+	int arg_count;
+	int mode;
+	int status;
 } state_t;
 
 extern state_t state;
@@ -257,7 +267,7 @@ char **split_string(char *str);
 /**
  * substring - extracts a substring from the given string
  *
- * @str: the original string
+ * @src: the original string
  * @from: the starting index of the substring
  * @to: the last index of the substring
  *
