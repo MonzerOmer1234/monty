@@ -38,17 +38,15 @@ typedef struct instruction_s
 #define QUEUE_MODE 1
 
 /**
- * struct instruction_s - opcode and its function
+ * struct state_s - the state of the interpreter
  * @stack_bottom: pointer to the bottom of the stack
  * @stack_size: the size of the stack
  * @args: the opcode and its arguments
  * @arg_count: the number of arguments
  * @mode: the operating mode (STACK_MODE or QUEUE_MODE)
  * @status: The status code for the last executed instruction
- * @f: function to handle the opcode
  *
- * Description: opcode and its function
- * for stack, queues, LIFO, FIFO
+ * Description: Holds data about the state of the interpreter
  */
 typedef struct state_s
 {
