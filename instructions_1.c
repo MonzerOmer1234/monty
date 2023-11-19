@@ -31,7 +31,8 @@ void exec(stack_t **stack, unsigned int line_number)
 		{"queue", &exec_queue}
 	};
 	unsigned long int i;
-	unsigned long instructions_count = sizeof(instructions) / sizeof(instruction_t);
+	unsigned long instructions_count = sizeof(instructions)
+			/ sizeof(instruction_t);
 	for (i = 0; i < instructions_count; i++)
 	{
 		if (!strcmp(state.args[0], instructions[i].opcode))
