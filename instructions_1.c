@@ -159,7 +159,8 @@ void exec_push(stack_t **stack, unsigned int line_number)
  * @line_number: the line number of the instruction
  *
  */
-void exec_pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
+void exec_pall(stack_t **stack,
+		unsigned int line_number __attribute__((unused)))
 {
 	stack_t *current = *stack;
 	while (current)

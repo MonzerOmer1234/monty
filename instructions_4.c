@@ -9,7 +9,8 @@
  * @line_number: the line number of the instruction
  *
  */
-void exec_pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
+void exec_pstr(stack_t **stack,
+		unsigned int line_number __attribute__((unused)))
 {
 	stack_t *stack_top = *stack;
 	while (stack_top && stack_top->n && is_printable_ascii_char(stack_top->n))
@@ -27,7 +28,8 @@ void exec_pstr(stack_t **stack, unsigned int line_number __attribute__((unused))
  * @line_number: the line number of the instruction
  *
  */
-void exec_rotl(stack_t **stack, unsigned int line_number __attribute__((unused)))
+void exec_rotl(stack_t **stack,
+		unsigned int line_number __attribute__((unused)))
 {
 	stack_t *second;
 	/* rotl has no effect if stack size is less than 2 */
@@ -52,7 +54,8 @@ void exec_rotl(stack_t **stack, unsigned int line_number __attribute__((unused))
  * @line_number: the line number of the instruction
  *
  */
-void exec_rotr(stack_t **stack, unsigned int line_number __attribute__((unused)))
+void exec_rotr(stack_t **stack,
+		unsigned int line_number __attribute__((unused)))
 {
 	stack_t *second_last;
 	/* rotr has no effect if stack size is less than 2 */
@@ -77,7 +80,8 @@ void exec_rotr(stack_t **stack, unsigned int line_number __attribute__((unused))
  * @line_number: the line number of the instruction
  *
  */
-void exec_stack(stack_t **stack __attribute__((unused)), unsigned int line_number __attribute__((unused)))
+void exec_stack(stack_t **stack __attribute__((unused)),
+		unsigned int line_number __attribute__((unused)))
 {
 	state.mode = STACK_MODE;
 }
@@ -89,7 +93,8 @@ void exec_stack(stack_t **stack __attribute__((unused)), unsigned int line_numbe
  * @line_number: the line number of the instruction
  *
  */
-void exec_queue(stack_t **stack __attribute__((unused)), unsigned int line_number __attribute__((unused)))
+void exec_queue(stack_t **stack __attribute__((unused)),
+		unsigned int line_number __attribute__((unused)))
 {
 	state.mode = QUEUE_MODE;
 }
