@@ -1,5 +1,5 @@
 #include <string.h>
-#include "utils.h"
+#include "monty.h"
 
 /**
  * remove_comments - Removes comments from a string by

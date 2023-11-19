@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "string_utils.h"
+#include "monty.h"
 
 /**
  * substring - extracts a substring from the given string

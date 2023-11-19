@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "monty.h"
-#include "instructions.h"
-#include "utils.h"
 
 state_t state;
 
