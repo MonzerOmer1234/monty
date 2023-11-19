@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		return EXIT_FAILURE;
+		return (EXIT_FAILURE);
 	}
 
 	/* Open source file */
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 	if (input_file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		return EXIT_FAILURE;
+		return (EXIT_FAILURE);
 	}
 
 	/* Read first line */
