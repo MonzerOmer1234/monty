@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	}
 
 	/* Read first line */
-	while (fgets(buffer, sizeof buffer, input_file))
+	while (fgets(buffer, sizeof(buffer), input_file))
 	{
 		line_length = strlen(buffer);
 
