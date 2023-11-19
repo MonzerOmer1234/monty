@@ -4,6 +4,13 @@
 
 state_t state;
 
+/**
+ * main - run the interpreter
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: the exit code
+ */
 int main(int argc, char **argv)
 {
 	FILE *input_file;		   /* The source file */
